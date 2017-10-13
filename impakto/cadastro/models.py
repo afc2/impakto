@@ -8,6 +8,7 @@ from django.db import models
 
 class Cadastro(models.Model):
 	
+	
 
 	SITUACAO_CHOICES = (
 		(u'autor', u'Autor'),
@@ -60,7 +61,7 @@ class Cadastro(models.Model):
 	cadastro_estado = models.CharField(choices = ESTADO_CHOICES, max_length = 20)
 
 	cadastro_observacao = models.TextField()
-	
+
 
 class Pessoa(Cadastro):
 	cadastro_cpf = models.CharField(max_length = 16)
