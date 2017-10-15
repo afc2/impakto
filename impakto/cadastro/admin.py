@@ -5,11 +5,20 @@ from django.contrib import admin
 
 # Register your models here.
 from impakto.cadastro.models import Cadastro
+from impakto.cadastro.models import Processo
 
 class CadastroAdmin(admin.ModelAdmin):
 	model = Cadastro
-	list_display = ['cadastro_codigo', 'cadastro_nome', 'cadastro_email']
-	list_filter = ['cadastro_cidade', 'cadastro_bairro']
-	search_fields = ['cadastro_nome']
+	list_display = ['codigo', 'nome', 'situacao']
+	list_filter = ['cpf_cpnj', 'situacao']
+	search_fields = ['situacao']
 	save_on_top = True
 admin.site.register(Cadastro, CadastroAdmin)
+
+class ProcessoAdmin(admin.ModelAdmin):
+	model = Processo
+	list_display = ['codigo_cliente', 'numero_processo', 'status_processo', 'situacao_processo']
+	list_filter = ['data_entrada', 'prazo_final', 'data_saida']
+	search_fields = ['status_processo']
+	save_on_top = True
+admin.site.register(Processo, ProcessoAdmin)
