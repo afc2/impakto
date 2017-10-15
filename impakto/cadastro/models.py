@@ -70,24 +70,24 @@ class Cadastro(models.Model):
 		)
 
  	codigo = models.AutoField(primary_key=True, unique = True)
-	nome = models.CharField(max_length = 100, verbose_name = "Nome do Cliente: ")
-	email = models.CharField(max_length = 30, verbose_name = "Email: ")
+	nome = models.CharField(max_length = 100, verbose_name = "Nome do Cliente")
+	email = models.CharField(max_length = 30, verbose_name = "Email")
 	situacao = models.CharField(choices = SITUACAO_CHOICES, max_length = 20, 
-		verbose_name = "Situação do Cliente: ")
+		verbose_name = "Situação do Cliente")
 	cpf_cpnj= models.CharField(max_length = 30, unique = True, 
-		verbose_name = "CPF ou CNPJ: ") # se tiver 14, é CPF, se tiver 25 é CNPJ
+		verbose_name = "CPF ou CNPJ") # se tiver 14, é CPF, se tiver 25 é CNPJ
 	
 	# endereço
-	logradouro = models.CharField(max_length = 100, verbose_name = "Logradouro: ")
-	numero = models.CharField(max_length = 6, verbose_name = "Numero: ")
-	complemento = models.CharField(max_length = 20, verbose_name = "Complemento: ")
-	cep = models.CharField(max_length = 15, verbose_name = "CEP: ")
-	bairro = models.CharField(max_length = 30, verbose_name = "Bairro: ")
-	cidade = models.CharField(max_length = 30, verbose_name = "Cidade: ")
-	estado = models.CharField(choices = ESTADO_CHOICES, max_length = 20, verbose_name = "Estado: ")
+	logradouro = models.CharField(max_length = 100, verbose_name = "Logradouro")
+	numero = models.CharField(max_length = 6, verbose_name = "Numero")
+	complemento = models.CharField(max_length = 20, verbose_name = "Complemento")
+	cep = models.CharField(max_length = 15, verbose_name = "CEP")
+	bairro = models.CharField(max_length = 30, verbose_name = "Bairro")
+	cidade = models.CharField(max_length = 30, verbose_name = "Cidade")
+	estado = models.CharField(choices = ESTADO_CHOICES, max_length = 20, verbose_name = "Estado")
 
-	valor_desconto= models.CharField(choices = DESCONTO_CHOICES, max_length = 5, verbose_name = "Receberá de desconto: ")
-	observacao_texto = models.TextField(verbose_name = "Observações sobre sobre o cliente: ")
+	valor_desconto= models.CharField(choices = DESCONTO_CHOICES, max_length = 5, verbose_name = "Receberá de desconto")
+	observacao_texto = models.TextField(verbose_name = "Observações sobre sobre o cliente")
 
 class Processo(models.Model):
 
@@ -113,21 +113,21 @@ class Processo(models.Model):
 	)
 	
 	codigo_cliente = models.ForeignKey(Cadastro)
-	numero_processo = models.CharField(max_length = 25 , unique = True, primary_key=True) 
+	numero_processo = models.CharField(max_length = 25 , unique = True) 
 	status_processo = models.CharField(choices = STATUS_CHOICES, max_length = 20, 
-		verbose_name = "Status do Processo: ")
+		verbose_name = "Status do Processo")
 	situacao_processo = models.CharField(choices = SITUACAO_CHOICES, max_length = 20, 
-		verbose_name = "Situação do Processo: ")
-	cidade = models.CharField(max_length = 30, verbose_name = "Cidade: ")
-	vara =  models.CharField(max_length = 3, verbose_name = "Vara: ")
+		verbose_name = "Situação do Processo")
+	cidade = models.CharField(max_length = 30, verbose_name = "Cidade")
+	vara =  models.CharField(max_length = 3	, verbose_name = "Vara")
 	# nome_cliente = models.CharField(max_length = 100, nome.Cadastro, )
 	# colocar o nome do cliente para faturamento depois
-	nome_autor = models.CharField(max_length = 100, verbose_name = "Nome do Autor: ")
-	nome_reu = models.CharField(max_length = 100, verbose_name = "Nome do Reu: ")
-	nome_adv_autor = models.CharField(max_length = 100, verbose_name = "Nome do Advogado do Autor: ")
-	nome_adv_reu  = models.CharField(max_length = 100, verbose_name = "Nome do Advogado do Reu: ")
-	data_entrada = models.DateField(verbose_name = "Data de Entrada: ")
-	prazo_final = models.DateField(verbose_name = "Prazo Final: ")
- 	data_saida = models.DateField(verbose_name = "Data de Saida: ")
+	nome_autor = models.CharField(max_length = 100, verbose_name = "Nome do Autor")
+	nome_reu = models.CharField(max_length = 100, verbose_name = "Nome do Reu")
+	nome_adv_autor = models.CharField(max_length = 100, verbose_name = "Nome do Advogado do Autor")
+	nome_adv_reu  = models.CharField(max_length = 100, verbose_name = "Nome do Advogado do Reu")
+	data_entrada = models.DateField(verbose_name = "Data de Entrada")
+	prazo_final = models.DateField(verbose_name = "Prazo Final")
+ 	data_saida = models.DateField(verbose_name = "Data de Saida")
  	servicos_escolhas = MultiSelectField(choices = SERVICO_CHOICES, max_choices = 4, 
- 		verbose_name = "Serviços a serem escolhidos: ")
+ 		verbose_name = "Serviços a serem escolhidos")
