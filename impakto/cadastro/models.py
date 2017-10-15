@@ -5,11 +5,8 @@ from django.db import models
 from multiselectfield import MultiSelectField
 # Create your models here.
 
-
 class Cadastro(models.Model):
 	
-	
-
 	SITUACAO_CHOICES = (
 		(u'Autor', u'Autor'),
 		(u'Reu', u'Reu'),
