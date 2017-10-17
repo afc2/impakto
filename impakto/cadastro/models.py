@@ -5,7 +5,7 @@ from django.db import models
 from multiselectfield import MultiSelectField
 # Create your models here.
 
-class Cadastro(models.Model):
+class Cliente(models.Model):
 	
 	SITUACAO_CHOICES = (
 		(u'Autor', u'Autor'),
@@ -88,20 +88,6 @@ class Cadastro(models.Model):
 
 class Processo(models.Model):
 
-	STATUS_CHOICES = (
-		(u'Em Espera', u'Em Espera'),
-		(u'Em trabalho', u'Em trabalho'),
-		(u'Em faturamento', u'Em faturamento'),
-		(u'Faturado', u'Faturado'),	
-	)
-
-	SERVICO_CHOICES = (
-		(u'Calculos Trabalhistas', u'Calculos Trabalhistas'),
-		(u'Assistencia Tecnica em Pericia', u'Assistencia Tecnica em Pericia'),
-		(u'Engenharia de Segurança de Trabalho', u'Engenharia de Segurança de Trabalho'),
-		(u'Auditoria Trabalhista', u'Auditoria Trabalhista'),
-	)
-
 	SITUACAO_CHOICES = (
 		(u'1 instancia', u'1 instancia'),
 		(u'2 instancia', u'2 instancia'),
@@ -109,10 +95,9 @@ class Processo(models.Model):
 		(u'Execução', u'Execução'),
 	)
 	
-	codigo_cliente = models.ForeignKey(Cadastro)
+	codigo_cliente = models.ForeignKey(Cliente)
 	numero_processo = models.CharField(max_length = 25 , unique = True) 
-	status_processo = models.CharField(choices = STATUS_CHOICES, max_length = 20, 
-		verbose_name = "Status do Processo")
+	
 	situacao_processo = models.CharField(choices = SITUACAO_CHOICES, max_length = 20, 
 		verbose_name = "Situação do Processo")
 	cidade = models.CharField(max_length = 30, verbose_name = "Cidade")
@@ -126,5 +111,119 @@ class Processo(models.Model):
 	data_entrada = models.DateField(verbose_name = "Data de Entrada")
 	prazo_final = models.DateField(verbose_name = "Prazo Final")
  	data_saida = models.DateField(verbose_name = "Data de Saida")
- 	servicos_escolhas = MultiSelectField(choices = SERVICO_CHOICES, max_choices = 4, 
+ 	
+class Servico(models.Model):
+
+	TIPOSALARIO_CHOICES = (
+		(u'Hora', u'Hora'),
+		(u'Ḿes', u'Mes'),
+	)
+
+	TIPODEMISSAO_CHOICES = (
+		(u'Sem Justa causa', u'Sem Justa causa'),
+		(u'Justa', u'Justa'),
+	)
+
+	STATUS_CHOICES = (
+		(u'Em Espera', u'Em Espera'),
+		(u'Em trabalho', u'Em trabalho'),
+		(u'Em faturamento', u'Em faturamento'),
+		(u'Faturado', u'Faturado'),	
+	)
+
+	
+	codigo_processo = models.ForeignKey(Processo)
+	data_admissao = models.DateField(verbose_name = "Data de Admissão")
+	data_demissao = models.DateField(verbose_name = "Data de Demissão")
+	data_distribuido = models.DateField(verbose_name = "Data em que o processo saiu da vara trabalhista (distribuido)")
+
+	tipo_salario = MultiSelectField(choices = TIPOSALARIO_CHOICES, max_choices = 1, 
+ 		verbose_name = "Tipo Salario")
+
+	tipo_demissao = MultiSelectField(choices = TIPODEMISSAO_CHOICES, max_choices = 1, 
+ 		verbose_name = "Tipo Demissao")
+
+	status_processo = models.CharField(choices = STATUS_CHOICES, max_length = 20, 
+		verbose_name = "Status do Processo")
+	
+
+	principal_atualizado =  models.CharField(max_length = 30, verbose_name = "Principal Atualizado")
+	juros_mora =  models.CharField(max_length = 30, verbose_name = " Juros de Mora")
+	total_bruto =  models.CharField(max_length = 30, verbose_name = "Total Bruto")
+	inss_autor = models.CharField(max_length = 30, verbose_name = "INSS Autor")
+	irrf =  models.CharField(max_length = 30, verbose_name = "I.R.R.F")
+
+	informacoes_calculo = models.TextField(verbose_name = "Dados e informações para calculo")
+
+
+class Calculo(models.Model):
+
+	TRABALHOSEXECUTADO_CHOICES = (
+		(u'Imp. Calculo', u'Imp. Calculo'),
+		(u'Imp. Laudo', u'Imp. Laudo'),
+		(u'Atual. Valores', u'Atual. Valores'),
+		(u'Laudo para Inicial', u'Laudo para Inicial'),
+		(u'Apresentação de calculos', u'Apresentação de calculos'),
+		(u'Impugnação /. Embargos', u'Impugnação /. Embargos'),
+		(u'Calculo Contigencia', u'Calculo Contigencia'),
+		(u'Perito do Juizo', u'Perito do Juizo'),
+		(u'Quesitos', u'Quesitos'),
+	)
+
+	JUSTICA_CHOICES = (
+		(u'Civel', u'Civel'),
+		(u'Trabalhista', u'Trabalhista'),
+		(u'Civel Fed.', u'Civel Fed.'),
+	)
+	PAGAMENTO_CHOICES = (
+		(u'A vista / Na entrega', u'A vista / Na entrega'),
+		(u'Faturado', u'Faturado'),
+	)
+
+	codigo_servico = models.ForeignKey(Servico)
+	
+	trabalhos_executados =  MultiSelectField(choices = TRABALHOSEXECUTADO_CHOICES, max_choices = 9, 
+ 		verbose_name = "Tipo Salario")
+
+	justica =  MultiSelectField(choices = JUSTICA_CHOICES, max_choices = 1, 
+ 		verbose_name = "Justiça")
+
+	tipo_pagamento =  MultiSelectField(choices = PAGAMENTO_CHOICES, max_choices = 1, 
+ 		verbose_name = "Tipo Salario")
+
+	valor =  models.FloatField(verbose_name = "Valor")
+
+	vencimento = models.DateField(verbose_name = "Data de vencimento")
+
+
+
+class Fatura(models.Model):
+	SERVICO_CHOICES = (
+		(u'Calculos Trabalhistas', u'Calculos Trabalhistas'),
+		(u'Assistencia Tecnica em Pericia', u'Assistencia Tecnica em Pericia'),
+		(u'Engenharia de Segurança de Trabalho', u'Engenharia de Segurança de Trabalho'),
+		(u'Auditoria Trabalhista', u'Auditoria Trabalhista'),
+	)
+
+	SERVICO_CHOICES = (
+		(u'Por Mes e por demanda', u'Por Mes e por demanda'),
+		(u'Por Mes e por preço fixo', u'Por Mes e por preço fixo'),
+		(u'Por demanda', u'Por demanda'),
+	)
+
+
+	codigo_calculo = models.ForeignKey(Calculo)
+
+	servicos_escolhas = MultiSelectField(choices = SERVICO_CHOICES, max_choices = 4, 
  		verbose_name = "Serviços a serem escolhidos")
+	
+	tipo_fatura = MultiSelectField(choices = SERVICO_CHOICES, max_choices = 4, 
+ 		verbose_name = "Tipo de fatura")
+
+	numero_processo = models.CharField(max_length = 100, verbose_name = "Numero do processo")
+	nome_autor  =  models.CharField(max_length = 100, verbose_name = "Nome do autor")
+
+	numero_autores = models.IntegerField(verbose_name = "Numero de autores")
+
+	valor = models.FloatField(verbose_name = "Valor a cobrar")
+	data_entrega = models.DateField(verbose_name = "Data de vencimento")
