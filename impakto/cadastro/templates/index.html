@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Blank Page | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+</head>
+
+<body class="theme-light-blue">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Carregando...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="home.html">Nome da Empresa | Sistema Gerencial</a>
+            </div>
+            <!-- <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="images/user.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nome do usuário</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">vpn_key</i>Mudar senha</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">work</i>
+                            <span>Administrativo</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="cadastrar_cliente.html">Cadastrar cliente</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_processo.html">Cadastrar processo</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_servico.html">Cadastro de serviço</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">trending_up</i>
+                            <span>Produção</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="fila_producao.html">Fila de produção</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_calculo.html">Cadastro de calculo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">supervisor_account</i>
+                            <span>Decisor</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="visualizar_processos.html">Visualizar processos</a>
+                            </li>
+                            <li>
+                                <a href="gerar_fatura.html">Gerar Fatura</a>
+                            </li>
+                            <li>
+                                <a href="fatura_gerada.html">Fatura gerada</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">security</i>
+                            <span>Administrador</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="cadastrar_usuario.html">Cadastrar usuário</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <!-- <div class="copyright">
+                    &copy; 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div> -->
+                <div class="version">
+                    <b>Versão: </b> 2.0
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <script src="js/pages/ui/tooltips-popovers.js"></script>
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
+    <script>
+        $(function () {
+            $('#celular').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone1').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone2').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone3').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('.numero_processo').inputmask('99999.99999.9999-99999', { placeholder: '_____._____.____-_____' });
+            $('.data-mask').inputmask('dd/mm/yyyy', { placeholder: '__/__/____' });
+            
+            $('#copy_and_paste').on('click', function(){
+                let el = $('#copy').clone().removeAttr('id').addClass('m-t-5 animated fadeIn');
+                el.find('button#remove').show();
+                $('#paste').append(el);
+            });
+
+            $('body').on('click', '#remove', function(){
+                if($(this).closest('div').attr('id') == undefined || $(this).closest('div').attr('id') != 'copy'){
+                    $(this).closest('div').addClass('fadeOut');
+                    setTimeout(() => {
+                        $(this).closest('div').remove();
+                    },500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

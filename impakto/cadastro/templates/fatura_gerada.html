@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Blank Page | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Bootstrap Select Css -->
+    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+</head>
+
+<body class="theme-light-blue">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Carregando...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">Nome da Empresa | Sistema Gerencial</a>
+            </div>
+            <!-- <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="images/user.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nome do usuário</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">vpn_key</i>Mudar senha</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">work</i>
+                            <span>Administrativo</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="cadastrar_cliente.html">Cadastrar cliente</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_processo.html">Cadastrar processo</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_servico.html">Cadastro de serviço</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">trending_up</i>
+                            <span>Produção</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="fila_producao.html">Fila de produção</a>
+                            </li>
+                            <li>
+                                <a href="cadastro_calculo.html">Cadastro de calculo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">supervisor_account</i>
+                            <span>Decisor</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="visualizar_processos.html">Visualizar processos</a>
+                            </li>
+                            <li>
+                                <a href="gerar_fatura.html">Gerar Fatura</a>
+                            </li>
+                            <li class="active">
+                                <a href="fatura_gerada.html">Fatura gerada</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">security</i>
+                            <span>Administrador</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="cadastrar_usuario.html">Cadastrar usuário</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <!-- <div class="copyright">
+                    &copy; 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div> -->
+                <div class="version">
+                    <b>Versão: </b> 2.0
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body" style="padding-top: 10px;">
+                            <div class="row clearfix">
+                               
+                                <!-- Corpo completo da fatura -->
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    
+                                    <!-- Cabeçalho da fatura -->
+                                    <div class="row clearfix b-f-all">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 m-b-0">
+                                            <h3 class="p-l-20 margin-0"><b>IMPAKTO</b></h3>
+                                            <h3 class="p-l-40 margin-0"><b>Perícias, Avaliações e</b></h3>
+                                            <h3 class="p-l-60 margin-0"><b>Consultoria Ltda</b></h3>
+                                            <small class="p-l-80 m-b-10"><b>desenvolvendo competências</b></small>
+                                            <p class="margin-0">Av. Conselheiro Nébias, 754/756 - conj. 1322</p>
+                                            <p class="margin-0 text-wrap">EDIFICIO HELBOUR OFFICE VILA RICA</p>
+                                            <p class="margin-0 text-wrap">Telefone (0XX13) 3223-1637</p>
+                                            <p class="margin-0 text-wrap">endereço eletrônico www.impakto.srv.br</p>
+                                            <p class="margin-0 text-wrap">CNPJ 10.528.213/0001-44</p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 m-b-0">
+                                            <div class="row clearfix">
+                                                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-9 col-lg-offset-7 col-md-offset-6 col-sm-offset-5 col-xs-offset-3 align-center" style="border-left: 1px solid #9e9e9e;border-bottom: 1px solid #9e9e9e;">
+                                                    <h3>FATURA - ORDEM DE SERVIÇO</h3>
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix" style="margin-top: 13px;margin-bottom: 13px;">
+                                                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-9 col-lg-offset-7 col-md-offset-6 col-sm-offset-5 col-xs-offset-3 align-center">
+                                                    Nº DA FATURA 6601
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="col-lg-5 col-md-6 col-sm-7 col-xs-9 col-lg-offset-7 col-md-offset-6 col-sm-offset-5 col-xs-offset-3 padding-0 m-b-0 b-f-l" style="min-height: 55px;">
+                                                    <table class="b-f-t b-f-b" style="width: 100%;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="p-l-10">
+                                                                    VENCIMENTO:
+                                                                </th>
+                                                                <td>
+                                                                    06/03/2017
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End cabeçalho -->
+
+                                    <!-- Corpo part 1 -->
+                                    <div class="row clearfix b-f-b b-f-r b-f-l">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 m-b-0">
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p-l-0 margin-0">
+                                                <p class="margin-0"><b>FATURA PARA:</b></p>
+                                                <p><b>COSTA DO SOL OPERADORA AEROPORT. S.A</b></p>
+                                                <p class="margin-0">CNPJ 10.528.213/001-44</p>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-xs-offset-5 b-f-r b-f-l" style="height: 100%;margin-bottom: 0;position: absolute;">
+
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 p-l-20">
+                                                <p><b>Referente a:</b></p>
+                                                <p>Assesoria e assistencia técnica em processos trabalhistas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end corpo part 1 -->
+
+                                    <!-- Corpo part 2 -->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                            Estrada Velha de Arraial do Cabo sn. Cidade de Cabo Frio/RJ
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 m-b-0 m-t-20">
+                                            Dra. Manoela Oliveira
+                                        </div>
+                                    </div>
+                                    <!-- End corpo part 2 -->
+
+                                    <!-- Corpo part 3 -->
+                                    <div class="row clearfix b-f-all">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-0 m-b-0">
+                                            <table style="width: 100%">
+                                                <thead class="b-f-b">
+                                                    <tr>
+                                                        <th class="align-center padding-5 b-f-r">DESCRIÇÂO</th>
+                                                        <th class="align-center padding-5 b-f-r">CODIGO</th>
+                                                        <th class="align-center padding-5 b-f-r">NÚMERO DE AUTORES</th>
+                                                        <th class="align-center padding-5 b-f-r">VALOR POR AUTOR</th>
+                                                        <th class="align-center padding-5">VALOR</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="p-l-10 b-f-r">
+                                                            <p class="margin-0">0100309.86.2016.501.0431</p>
+                                                            <p class="margin-0">Carlos Alberto tavares</p>
+                                                        </td>
+                                                        <td  class="p-l-10 b-f-r"></td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                        </td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">200</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">200</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-l-10 b-f-r">
+                                                            <p class="margin-0">0100309.86.2016.501.0431</p>
+                                                            <p class="margin-0">Carlos Alberto tavares</p>
+                                                        </td>
+                                                        <td  class="p-l-10 b-f-r"></td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                        </td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">200</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td  class="p-l-10 p-r-10 b-f-r">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">200</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-l-10 b-f-r">
+                                                            <div class="p-r-5 m-t-100" style="
+                                                            display: flex;
+                                                            flex-flow: column;
+                                                            justify-content: flex-end;
+                                                            text-align: -webkit-right;">
+                                                                <p  class="margin-0">IR - 100%</p>
+                                                                <p  class="margin-0">CSL - 1%</p>
+                                                                <p  class="margin-0">COFINS - 3%</p>
+                                                                <p  class="margin-0">PIS - 0,65%</p>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-l-10 b-f-r">
+                                                            <div class="p-r-5 m-t-100" style="
+                                                            display: flex;
+                                                            flex-flow: column;
+                                                            justify-content: flex-end;">
+                                                            <table style="width: 100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>R$</td>
+                                                                            <td class="align-right">6,00</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>R$</td>
+                                                                            <td class="align-right">4,00</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>R$</td>
+                                                                            <td class="align-right">12,00</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>R$</td>
+                                                                            <td class="align-right">2,60</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                        <td class="p-l-10 b-f-r"></td>
+                                                        <td class="p-l-10 b-f-r"></td>
+                                                        <td class="p-l-10 b-f-r"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3" rowspan="5" class="align-center b-f-r b-f-t">
+                                                            <h3 class="col-red padding-20">BANCO BRADESCO S.A - AGENCIA 6.000 - CONTA 1.115-0</h3>
+                                                        </td>
+                                                        <td class="align-right p-r-5 b-f-r b-f-r">SUBTOTAL</td>
+                                                        <td class="p-l-5 p-r-5 b-f-b b-f-t">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">400,00</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-right p-r-5 b-f-r">DE TRANSPORTE</td>
+                                                        <td class="p-l-5 p-r-5 b-f-b b-f-t">
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-right p-r-5 b-f-r">TOTAL DE RETENÇÂO DE IMPOSTOS</td>
+                                                        <td class="p-l-5 p-r-5 b-f-b">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">24,50</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-right p-r-5 b-f-r">MOTOBOY</td>
+                                                        <td class="p-l-5 p-r-5 b-f-b b-f-t">
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-right p-r-5 b-f-r">A TRANSPORTAR</td>
+                                                        <td class="p-l-5 p-r-5 b-f-t">
+                                                            <table style="width: 100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>R$</td>
+                                                                        <td class="align-right">375,40</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End corpo faturamento -->
+                            </div>
+                            <center>
+                                <button type="button" class="btn btn-primary btn-lg waves-effect">Gerar Fatura</button>
+                                <button type="button" class="btn btn-primary btn-lg waves-effect">Enviar para o email do cliente</button>
+                                <button type="button" class="btn btn-primary btn-lg waves-effect">Cancelar Fatura</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <script src="js/pages/ui/tooltips-popovers.js"></script>
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="js/demo.js"></script>
+    <script>
+        $(function () {
+            $('#celular').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone1').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone2').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('#telefone3').inputmask('+99 (99) 99999-9999', { placeholder: '+__ (__) _____-____' });
+            $('.numero_processo').inputmask('99999.99999.9999-99999', { placeholder: '_____._____.____-_____' });
+            $('.data-mask').inputmask('dd/mm/yyyy', { placeholder: '__/__/____' });
+            
+            $('#copy_and_paste').on('click', function(){
+                let el = $('#copy').clone().removeAttr('id').addClass('m-t-5 animated fadeIn');
+                el.find('button#remove').show();
+                $('#paste').append(el);
+            });
+
+            $('body').on('click', '#remove', function(){
+                if($(this).closest('div').attr('id') == undefined || $(this).closest('div').attr('id') != 'copy'){
+                    $(this).closest('div').addClass('fadeOut');
+                    setTimeout(() => {
+                        $(this).closest('div').remove();
+                    },500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
