@@ -86,6 +86,11 @@ class Cliente(models.Model):
 	valor_desconto= models.CharField(choices = DESCONTO_CHOICES, max_length = 5, verbose_name = "Receberá de desconto")
 	observacao_texto = models.TextField(verbose_name = "Observações sobre sobre o cliente")
 
+	# deve mostrar o dado do cliente (cpf_cnpj) do Modelo Cliente para cadastrar Cliente
+
+	def __str__(self):
+		return self.cpf_cnpj
+
 class Processo(models.Model):
 
 	SITUACAO_CHOICES = (
@@ -111,6 +116,12 @@ class Processo(models.Model):
 	data_entrada = models.DateField(verbose_name = "Data de Entrada")
 	prazo_final = models.DateField(verbose_name = "Prazo Final")
  	data_saida = models.DateField(verbose_name = "Data de Saida")
+
+
+ 	# deve mostrar o numero_processo (codigo_servico) do Modelo Servico para cadastrar Calculo
+
+ 	def __str__(self):
+		return self.numero_processo
  	
 class Servico(models.Model):
 
@@ -155,6 +166,9 @@ class Servico(models.Model):
 
 	informacoes_calculo = models.TextField(verbose_name = "Dados e informações para calculo")
 
+	# deve mostrar o codigo do processo (codigo_processo) do Modelo Processo para cadastrar Servico
+	def __str__(self):
+		return self.codigo_processo
 
 class Calculo(models.Model):
 
@@ -195,7 +209,9 @@ class Calculo(models.Model):
 
 	vencimento = models.DateField(verbose_name = "Data de vencimento")
 
-
+	# deve mostrar o codigo do servico (codigo_servico) do Modelo Servico para cadastrar Calculo
+	def __str__(self):
+		return self.codigo_servico
 
 class Fatura(models.Model):
 	SERVICO_CHOICES = (
@@ -227,3 +243,7 @@ class Fatura(models.Model):
 
 	valor = models.FloatField(verbose_name = "Valor a cobrar")
 	data_entrega = models.DateField(verbose_name = "Data de vencimento")
+
+	# deve mostrar o codigo do calculo (codigo_calculo) do Modelo Calculo
+	def __str__(self):
+		return self.codigo_calculo
